@@ -8,3 +8,10 @@ EVIDENCIAS/
 *.suo
 *.docx
 *.zip
+
+# Archivos locales de documentacion y pruebas
+*.md
+*.docx
+*.pdf
+*.bat
+*.zip
