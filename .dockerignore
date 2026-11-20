@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.idea/
+.git/
+.github/
+Publicado/
+EVIDENCIAS/
+*.docx
+*.zip
+*.bat
+*.ps1
+*.md

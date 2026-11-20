@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+.idea/
+Publicado/
+EVIDENCIAS/
+*.user
+*.suo
+*.docx
+*.zip

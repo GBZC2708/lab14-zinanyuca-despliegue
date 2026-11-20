@@ -1,0 +1,43 @@
+name: Build and Deploy .NET Application
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    env:
+      RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+    steps:
+      - name: Obtener el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore Lab14.Zinanyuca.csproj
+
+      - name: Compilar en Release
+        run: dotnet build Lab14.Zinanyuca.csproj --configuration Release --no-restore
+
+      - name: Publicar aplicacion
+        run: dotnet publish Lab14.Zinanyuca.csproj --configuration Release --no-build --output ./published
+
+      - name: Guardar archivos publicados como evidencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab14-publicado
+          path: published/
+
+      - name: Iniciar despliegue en Render (solo si hay secreto configurado)
+        if: ${{ env.RENDER_DEPLOY_HOOK_URL != '' }}
+        run: curl --fail --silent --show-error --request POST "$RENDER_DEPLOY_HOOK_URL"

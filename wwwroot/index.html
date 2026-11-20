@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratorio 14 - Publicación .NET</title>
+  <style>
+    body { margin: 0; font-family: Segoe UI, Arial, sans-serif; color: #16304b; background: #f3f8fc; }
+    main { max-width: 760px; margin: 7vh auto; padding: 24px; }
+    section { background: #fff; padding: 38px; border-radius: 18px; box-shadow: 0 12px 40px #16304b12; }
+    .etiqueta { color: #008fba; font-weight: 700; letter-spacing: .08em; }
+    h1 { font-size: clamp(29px, 4vw, 42px); line-height: 1.14; margin: 15px 0; }
+    p { line-height: 1.6; }
+    .estado { display: inline-block; padding: 8px 13px; background: #e5f7ef; color: #167042;
+              border-radius: 30px; font-weight: 700; }
+    .enlaces { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    a { padding: 12px 17px; text-decoration: none; border-radius: 9px;
+        background: #008fba; color: #fff; font-weight: 600; }
+    a.sec { color: #008fba; background: #e8f6fb; }
+    footer { color: #64798b; font-size: 14px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <div class="etiqueta">TECSUP · DAEA · LABORATORIO 14</div>
+      <h1>Publicación y despliegue de una aplicación .NET 8</h1>
+      <p>Proyecto académico de <strong>Gerald Brand Zinanyuca Calcina</strong>.</p>
+      <p><span class="estado">Aplicación disponible</span></p>
+      <p>Esta página permite demostrar una publicación local y un despliegue en la nube mediante Docker, GitHub Actions y Render.</p>
+      <div class="enlaces">
+        <a href="/api/estado">Ver endpoint de la API</a>
+        <a class="sec" href="/health">Comprobar estado</a>
+      </div>
+    </section>
+    <footer>Curso: Desarrollo de Aplicaciones Empresariales Avanzadas · Sección C24-6-E</footer>
+  </main>
+</body>
+</html>
